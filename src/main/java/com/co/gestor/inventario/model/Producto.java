@@ -3,10 +3,13 @@ package com.co.gestor.inventario.model;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 @Data
 public class Producto {
+
+    @Id
     private int id;
     private String nombre;
     private String descripcion;
