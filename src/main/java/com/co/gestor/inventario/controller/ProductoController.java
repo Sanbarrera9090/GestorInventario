@@ -14,8 +14,13 @@ import java.util.concurrent.ExecutionException;
 @RequestMapping("/api")
 public class ProductoController {
 
+    private final ProductServive productServive;
+
     @Autowired
-    private ProductServive productServive;
+    public ProductoController(ProductServive productServive) {
+        this.productServive = productServive;
+    }
+
 
     @PostMapping("/productos")
     public String saveProduct(@RequestBody Producto producto) throws ExecutionException, InterruptedException {
